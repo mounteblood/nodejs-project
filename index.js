@@ -3,13 +3,13 @@ import mongoose from 'mongoose'
 import Post from "./post.js";
 
 const PORT = 7777;
-const DB_URL = 'mongodb+srv://user:user@cluster0.vvms7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const DB_URL = 'URL';
 const app = express();
 
 app.post('/', async (req, res) => {
     const {author, title, contect, picture} = req.body
     const post = await Post.create({author, title, contect, picture})
-    res.status(200).json('Сервер на ноде')
+    res.status(200).json('server on')
 });
 
 async function startApp(){
